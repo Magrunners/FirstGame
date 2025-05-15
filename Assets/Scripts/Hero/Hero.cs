@@ -21,6 +21,15 @@ public class Hero : MonoBehaviour
         //Instance = this
         rb = GetComponent<Rigidbody2D>();        
     }
+    private void Start()
+    {
+        GameInput.Instance.OnHeroAttack += Hero_OnHeroAttack;
+    }
+
+    private void Hero_OnHeroAttack(object sender, System.EventArgs e)
+    {
+        ActiveWeapon.Instance.GetActiveWeapon().Attack();
+    }
 
     private void Update()
     {

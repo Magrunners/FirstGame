@@ -29,9 +29,9 @@ public class HeroVisual : MonoBehaviour
         if (mousePosition.x < heroPosition.x)
         {
             spriteRenderer.flipX = true;
-        } 
+        }
         else
-            spriteRenderer.flipX = false;           
+            spriteRenderer.flipX = false;
 
     }
 
