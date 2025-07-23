@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2541369331221793162}
   - component: {fileID: 8003576783028187562}
   - component: {fileID: 7618804745141873256}
+  - component: {fileID: 8044869817451771436}
   m_Layer: 0
   m_Name: SkeletonVisual
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 7dbf813314efdb14abf614e0822fd8a0, type: 3}
+  m_Sprite: {fileID: 1290532464073988732, guid: ed063d5421ce6c240ae388e1c48f55be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,6 +112,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8044869817451771436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706543938754107911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3213e365937c111438871542c7f64152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5982673804096829899
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +242,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.62, y: -0.38, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2541369331221793162}
@@ -342,10 +355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16fd32993a68ce4f8e07897c5ca21fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingState: 0
-  walkingDistanceMax: 7
-  walkingDistanceMin: 3
-  walkingTimerMax: 2
+  _startingState: 0
+  _roamingDistanceMax: 7
+  _roamingDistanceMin: 3
+  _roamingTimerMax: 2
+  _isChasingEnemy: 0
+  _isAttackingEnemy: 0
 --- !u!114 &7270983491229711939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,4 +373,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99a364e097c8e14493ec5cc666cfce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
+  _maxHealth: 20
