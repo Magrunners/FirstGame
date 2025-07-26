@@ -716,8 +716,8 @@ Transform:
   m_GameObject: {fileID: 909847222}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.0683, z: 0}
-  m_LocalScale: {x: 21.40665, y: 12.207173, z: 21.03}
+  m_LocalPosition: {x: 0.0013, y: 0.0612, z: 0}
+  m_LocalScale: {x: 24.053387, y: 14.2234535, z: 21.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -963,17 +963,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3866421935939139723, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
   m_PrefabInstance: {fileID: 6460936215035671553}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1979776734 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-  m_PrefabInstance: {fileID: 6460936215035671553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16fd32993a68ce4f8e07897c5ca21fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1993515724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2038103073796162816, guid: 47f52e2aeba46e948b69bd601074b42a, type: 3}
@@ -1463,22 +1452,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _startingState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _isChasingEnemy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8003576783028187562, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4723107735738678597, guid: 7dbf813314efdb14abf614e0822fd8a0, type: 3}
-    - target: {fileID: 8044869817451771436, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _enemyAI
-      value: 
-      objectReference: {fileID: 1979776734}
     - target: {fileID: 9090419995490188952, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_Name
       value: Skeleton

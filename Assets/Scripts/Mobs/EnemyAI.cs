@@ -11,40 +11,41 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float _roamingDistanceMax = 7f;
     [SerializeField] private float _roamingDistanceMin = 3f;
     [SerializeField] private float _roamingTimerMax = 2f;
+
     [SerializeField] private bool _isChasingEnemy = false;
-    [SerializeField] private bool _isAttackingEnemy = false;
-    [SerializeField] private float _attackingDistance = 2f;
     [SerializeField] private float _chasingDistance = 4f;
     [SerializeField] private float _chasingSpeedMultyplier = 2f;
+
+    [SerializeField] private bool _isAttackingEnemy = false;
+    [SerializeField] private float _attackingDistance = 2f;
     [SerializeField] private float _attackRate = 2f;
 
-    private float _nextAttackTimer = 0f;
     private NavMeshAgent _navMeshAgent;
-    private State _currentState;
-    private float _roamingTimer;
-    private Vector3 _roamPosition;
-    private Vector3 _startingPosition;
     private Hero _hero;
+    private State _currentState;
+
+    private Vector3 _startingPosition;
+    private Vector3 _roamPosition;
+    private float _roamingTimer;
     private float _roamingSpeed;
     private float _chasingSpeed;
+
+    private float _nextAttackTimer = 0f;
+
+    private float _nextCheckDirectionTime = 0f;
+    private readonly float _checkDirectionDuration = 0.1f;
+    private Vector3 _lastPosition;
+
     public event EventHandler OnEnemyAttack;
 
-    public bool IsRoaming
-    {
-        get
-        {
-            if (_navMeshAgent.velocity == Vector3.zero)
-                return false;
-            else
-                return true;
-        }
-    }
+    public bool IsRoaming => _navMeshAgent.velocity != Vector3.zero;
+
     private enum State
     {
         Idle,
         Roaming,
         Chasing,
-        Attaking,
+        Attacking,
         Death
     }
     private void Awake()
@@ -61,6 +62,7 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         StateHandler();
+        MovementDirectionHandler();
     }
     private void StateHandler()
     {
@@ -79,7 +81,7 @@ public class EnemyAI : MonoBehaviour
                 ChasingTarget();
                 CheckCurrentState();
                 break;
-            case State.Attaking:
+            case State.Attacking:
                 AttakingTarget();
                 CheckCurrentState();
                 break;
@@ -92,8 +94,7 @@ public class EnemyAI : MonoBehaviour
 
         }
     }
-
-    private State CheckCurrentState()
+    private void CheckCurrentState()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _hero.transform.position);
         State newState = State.Roaming;
@@ -106,7 +107,7 @@ public class EnemyAI : MonoBehaviour
         if (_isAttackingEnemy)
         {
             if (distanceToPlayer <= _attackingDistance)
-                newState = State.Attaking;
+                newState = State.Attacking;
         }
         if(newState != _currentState)
         {
@@ -121,26 +122,56 @@ public class EnemyAI : MonoBehaviour
         {
             _navMeshAgent.speed = _roamingSpeed;
         }
-        else if( newState == State.Attaking)
+        else if( newState == State.Attacking)
         {
             _navMeshAgent.ResetPath();
         }
 
 
-            return newState;
+        _currentState = newState;
     }
     private void Roaming()
     {
         _startingPosition = transform.position;
         _roamPosition = GetRoamingPosition();
         _navMeshAgent.SetDestination(_roamPosition);
-        ChangeFacingDirection(_startingPosition, _roamPosition);
     }
+
+
     private Vector3 GetRoamingPosition()
     {
         return _startingPosition + MobsUtils.GetRandomDir() * UnityEngine.Random.Range(_roamingDistanceMin, _roamingDistanceMax);
+    }
+    private void ChasingTarget()
+    {
+        _navMeshAgent.SetDestination(_hero.transform.position);
+    }
+    private void AttakingTarget()
+    {
+        if (Time.time > _nextAttackTimer)
+        {
+            OnEnemyAttack?.Invoke(this, EventArgs.Empty);
+            _nextAttackTimer = Time.time + _attackRate;
+        }
 
-    }    
+    }
+    private void MovementDirectionHandler()
+    {
+        if (Time.time > _nextCheckDirectionTime)
+        {
+            if (IsRoaming)
+            {
+                ChangeFacingDirection(_lastPosition, transform.position);
+            }
+            else if (_currentState == State.Attacking)
+            {
+                ChangeFacingDirection(transform.position, _hero.transform.position);
+            }
+
+            _lastPosition = transform.position;
+            _nextCheckDirectionTime = Time.time + _checkDirectionDuration;
+        }
+    }
     private void ChangeFacingDirection(Vector3 sourcePosition, Vector3 targetPosition)
     {
         if (sourcePosition.x > targetPosition.x)
@@ -152,24 +183,6 @@ public class EnemyAI : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
-
-    private void ChasingTarget()
-    {
-        _navMeshAgent.SetDestination(_hero.transform.position);
-        _startingPosition = _navMeshAgent.transform.position;
-        ChangeFacingDirection(_startingPosition, _hero.transform.position);
-    }
-
-    private void AttakingTarget()
-    {
-        if(Time.time > _nextAttackTimer)
-        {
-            OnEnemyAttack?.Invoke(this, EventArgs.Empty);
-            _nextAttackTimer = Time.time + _attackRate;
-        }
-
-    }
-
     public float GetRoamingAnimationSpeed()
     {
         return _navMeshAgent.speed / _roamingSpeed;
