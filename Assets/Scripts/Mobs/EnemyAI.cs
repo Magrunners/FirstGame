@@ -59,6 +59,11 @@ public class EnemyAI : MonoBehaviour
         _hero = FindAnyObjectByType<Hero>();
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         StateHandler();
