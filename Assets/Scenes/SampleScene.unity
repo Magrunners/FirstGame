@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &206311654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5982673804096829899, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
+  m_PrefabInstance: {fileID: 6460936215035671553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &265369521
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +213,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 8056833846855284957, guid: 88eee59a1d5ed354aaf32423ed0bc7b7, type: 3}
+      propertyPath: _swordDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056833846855284957, guid: 88eee59a1d5ed354aaf32423ed0bc7b7, type: 3}
+      propertyPath: _polygonCollider2D
+      value: 
+      objectReference: {fileID: 922517334}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -548,6 +561,11 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!60 &922517334 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6153681503472577576, guid: 88eee59a1d5ed354aaf32423ed0bc7b7, type: 3}
+  m_PrefabInstance: {fileID: 299310715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1062710769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1248,6 +1266,14 @@ PrefabInstance:
       propertyPath: _isAttackingEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7270983491229711939, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
+      propertyPath: _enemySO
+      value: 
+      objectReference: {fileID: 11400000, guid: b122be7828687bb49b42da3d964cf614, type: 2}
+    - target: {fileID: 8044869817451771436, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
+      propertyPath: _enemyShadow
+      value: 
+      objectReference: {fileID: 206311654}
     - target: {fileID: 9090419995490188952, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_Name
       value: Skeleton

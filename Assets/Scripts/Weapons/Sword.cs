@@ -4,7 +4,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
 
-    [SerializeField] private int _swordDamage = 2;
+    [SerializeField] private int _swordDamage = 1;
     public event EventHandler OnSwordSwing;
     public PolygonCollider2D _polygonCollider2D;
 
