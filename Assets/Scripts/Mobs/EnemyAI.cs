@@ -17,8 +17,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float _chasingSpeedMultyplier = 2f;
 
     [SerializeField] private bool _isAttackingEnemy = false;
-    [SerializeField] private float _attackingDistance = 2f;
-    [SerializeField] private float _attackRate = 2f;
+    [SerializeField] private float _attackingDistance = 2.5f;
+    [SerializeField] private float _attackRate = 1f;
 
     private NavMeshAgent _navMeshAgent;
     private Hero _hero;
