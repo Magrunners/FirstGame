@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(PolygonCollider2D))]
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class EnemyEntity : MonoBehaviour
 {
+    public event EventHandler OnTakeDamage;
+
     [SerializeField] private int _maxHealth;
     private int _currentHealth;
 
@@ -26,6 +29,7 @@ public class EnemyEntity : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        OnTakeDamage?.Invoke(this, EventArgs.Empty);
 
         DetectDeath();
     }

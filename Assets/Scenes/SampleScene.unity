@@ -208,10 +208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    - target: {fileID: 9143947197051540632, guid: 88eee59a1d5ed354aaf32423ed0bc7b7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1247,14 +1243,6 @@ PrefabInstance:
     - target: {fileID: 3866421935939139723, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _attackRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _isChasingEnemy
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: _isAttackingEnemy

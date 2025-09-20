@@ -11,6 +11,7 @@ public class SceletonVisual : MonoBehaviour
     private const string IS_ROAMING = "IsRoaming";
     private const string CHASING_SPEED_MULTYPLIER = "ChasingSpeedMultiplier";
     private const string ATTACK = "Attack";
+    private const string TAKEDAMAGE = "TakeDamage";
 
 
 
@@ -22,7 +23,9 @@ public class SceletonVisual : MonoBehaviour
     private void Start()
     {
         _enemyAI.OnEnemyAttack += _enemyAI_OnEnemyAttack;
+        _enemyEntity.OnTakeDamage += _enemyEntity_OnTakeDamage;
     }
+    
 
     private void OnDestroy()
     {
@@ -47,5 +50,9 @@ public class SceletonVisual : MonoBehaviour
     private void _enemyAI_OnEnemyAttack(object sender, System.EventArgs e)
     {
         _animator.SetTrigger(ATTACK);
+    }
+    private void _enemyEntity_OnTakeDamage(object sender, System.EventArgs e)
+    {
+        _animator.SetTrigger(TAKEDAMAGE);
     }
 }
