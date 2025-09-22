@@ -669,6 +669,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1772165772860631258, guid: 3e7d20e2301971e4fa85a6fe31218875, type: 3}
   m_PrefabInstance: {fileID: 6229566157721721524}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &6153681503472577576 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 222252889829258908, guid: 3e7d20e2301971e4fa85a6fe31218875, type: 3}
+  m_PrefabInstance: {fileID: 6229566157721721524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7477988920001946506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3581762650499561790, guid: 3e7d20e2301971e4fa85a6fe31218875, type: 3}
@@ -686,5 +691,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948b7414d5fb8794b88a59dbd020d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swordDamage: 2
-  _polygonCollider2D: {fileID: 0}
+  _swordDamage: 1
+  _polygonCollider2D: {fileID: 6153681503472577576}
