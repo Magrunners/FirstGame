@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 9143947197051540632}
   - component: {fileID: 4385552258752527770}
   - component: {fileID: 3709157404910315186}
+  - component: {fileID: 377573125241691786}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -330,7 +331,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b6801e9e9f9d545b78fadea719c2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 5
+  _movingSpeed: 5
+  _maxHealth: 30
+  _damageRecoveryTime: 0.5
+--- !u!114 &377573125241691786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086096198515427127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73a8e4685f3f694db431137a4fc21c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockBackForce: 3
+  _knockBackovingTimerMax: 0.3
 --- !u!1 &6165409877480404066
 GameObject:
   m_ObjectHideFlags: 0

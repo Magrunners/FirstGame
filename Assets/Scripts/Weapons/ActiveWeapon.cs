@@ -19,6 +19,7 @@ public class ActiveWeapon : MonoBehaviour
 
     private void Update()
     {
+        if(Hero.IsAlive())
         RotateSword();
     }
     private void RotateSword()

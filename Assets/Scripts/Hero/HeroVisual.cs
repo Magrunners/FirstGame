@@ -6,6 +6,7 @@ public class HeroVisual : MonoBehaviour
 
     private Animator animator;
     private const string IS_RUNNING = "IsRunning";
+    private const string IS_DIE = "IsDie";
     SpriteRenderer spriteRenderer;
     
     private void Awake()
@@ -15,12 +16,24 @@ public class HeroVisual : MonoBehaviour
        
     }
 
+    private void Start()
+    {
+        Hero.OnHeroDeath += Hero_OnHeroDeath;
+    }
     private void Update()
     {
+        if (Hero.IsAlive())
+            RotateHero();
+
         animator.SetBool(IS_RUNNING, Hero.IsRunning());
-        RotateHero();
+       
     }
     
+    private void Hero_OnHeroDeath(object sender, System.EventArgs e)
+    {
+        animator.SetBool(IS_DIE, true);
+    }
+
     private void RotateHero()
     {
         Vector3 mousePosition = GameInput.Instance.MousePosition();
@@ -32,8 +45,7 @@ public class HeroVisual : MonoBehaviour
         }
         else
             spriteRenderer.flipX = false;
-
     }
 
-
+    
 }

@@ -10,7 +10,6 @@ public class EnemyEntity : MonoBehaviour
 {
 
     [SerializeField] private EnemySO _enemySO;
-    //[SerializeField] private int _maxHealth;
     public event EventHandler OnTakeDamage;
     public event EventHandler OnDeath;
 
@@ -31,9 +30,10 @@ public class EnemyEntity : MonoBehaviour
     {
         _currentHealth = _enemySO.enemyHealth;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Attack");
+        if (collision.transform.TryGetComponent(out Hero hero))
+            hero.TakeDamage(transform, _enemySO.enemyDamageAmount);
     }
     public void TakeDamage(int damage)
     {
