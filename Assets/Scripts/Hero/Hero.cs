@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class Hero : MonoBehaviour
 {
    
@@ -10,9 +11,11 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _damageRecoveryTime = 0.5f;
 
     private Rigidbody2D _rb;
+    private CapsuleCollider2D _capsuleCollider;
     private KnockBack _knockBack;
 
     public EventHandler OnHeroDeath;
+    public EventHandler OnFlashBlink;
 
     private float _heroMinMovingSpeed = 0.1f;
     private int _currentHealth;
@@ -22,7 +25,8 @@ public class Hero : MonoBehaviour
     private bool _isAlive = true;
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();      
+        _rb = GetComponent<Rigidbody2D>();
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _knockBack = GetComponent<KnockBack>();
     }
     private void Start()
@@ -54,9 +58,12 @@ public class Hero : MonoBehaviour
     {
         if (_canTakeDamage && _isAlive)
         {
+
             _canTakeDamage = false;
             _currentHealth = Mathf.Max(0, _currentHealth -= damage);
             _knockBack.GetKnockBack(damageSource);
+
+            OnFlashBlink.Invoke(this, EventArgs.Empty);
 
             StartCoroutine(DemageRecoveryRoutine());
         }
@@ -68,6 +75,7 @@ public class Hero : MonoBehaviour
         if(_currentHealth ==  0 && _isAlive)
         {
             _isAlive = false;
+            _capsuleCollider.enabled = false;
             _knockBack.StopKnockBackMovement();
             GameInput.Instance.DisableMovement();
             OnHeroDeath.Invoke(this, EventArgs.Empty);

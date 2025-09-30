@@ -3,17 +3,17 @@ using UnityEngine;
 public class HeroVisual : MonoBehaviour
 {
     public Hero Hero; 
-
+    private FlashBlink _flashBlink;
     private Animator animator;
     private const string IS_RUNNING = "IsRunning";
     private const string IS_DIE = "IsDie";
-    SpriteRenderer spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
     
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-       
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+       _flashBlink = GetComponent<FlashBlink>();
     }
 
     private void Start()
@@ -32,6 +32,7 @@ public class HeroVisual : MonoBehaviour
     private void Hero_OnHeroDeath(object sender, System.EventArgs e)
     {
         animator.SetBool(IS_DIE, true);
+        _flashBlink.StopBlinking();
     }
 
     private void RotateHero()
@@ -41,10 +42,10 @@ public class HeroVisual : MonoBehaviour
 
         if (mousePosition.x < heroPosition.x)
         {
-            spriteRenderer.flipX = true;
+            _spriteRenderer.flipX = true;
         }
         else
-            spriteRenderer.flipX = false;
+            _spriteRenderer.flipX = false;
     }
 
     
