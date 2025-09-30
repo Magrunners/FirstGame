@@ -39,7 +39,6 @@ public class EnemyAI : MonoBehaviour
     public event EventHandler OnEnemyAttack;
 
     public bool IsRoaming => _navMeshAgent.velocity != Vector3.zero;
-
     private enum State
     {
         Idle,
@@ -58,12 +57,6 @@ public class EnemyAI : MonoBehaviour
         _chasingSpeed = _navMeshAgent.speed * _chasingSpeedMultyplier;
         _hero = FindAnyObjectByType<Hero>();
     }
-
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         StateHandler();
@@ -101,7 +94,6 @@ public class EnemyAI : MonoBehaviour
             case State.Idle:
                 CheckCurrentState();
                 break;
-
         }
     }
     private void CheckCurrentState()
@@ -123,7 +115,6 @@ public class EnemyAI : MonoBehaviour
                 else
                     newState = State.Roaming;
             }
-
         }
         if(newState != _currentState)
         {
@@ -142,8 +133,6 @@ public class EnemyAI : MonoBehaviour
         {
             _navMeshAgent.ResetPath();
         }
-
-
         _currentState = newState;
     }
     private void Roaming()
@@ -152,8 +141,6 @@ public class EnemyAI : MonoBehaviour
         _roamPosition = GetRoamingPosition();
         _navMeshAgent.SetDestination(_roamPosition);
     }
-
-
     private Vector3 GetRoamingPosition()
     {
         return _startingPosition + MobsUtils.GetRandomDir() * UnityEngine.Random.Range(_roamingDistanceMin, _roamingDistanceMax);
@@ -169,7 +156,6 @@ public class EnemyAI : MonoBehaviour
             OnEnemyAttack?.Invoke(this, EventArgs.Empty);
             _nextAttackTimer = Time.time + _attackRate;
         }
-
     }
     private void MovementDirectionHandler()
     {
@@ -183,7 +169,6 @@ public class EnemyAI : MonoBehaviour
             {
                 ChangeFacingDirection(transform.position, _hero.transform.position);
             }
-
             _lastPosition = transform.position;
             _nextCheckDirectionTime = Time.time + _checkDirectionDuration;
         }
@@ -203,8 +188,4 @@ public class EnemyAI : MonoBehaviour
     {
         return _navMeshAgent.speed / _roamingSpeed;
     }
-
-    
-
-
 }

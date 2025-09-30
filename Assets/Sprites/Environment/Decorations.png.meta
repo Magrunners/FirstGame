@@ -278,12 +278,12 @@ TextureImporter:
       name: Decorations_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 244
-        width: 10
-        height: 11
+        x: 4
+        y: 245
+        width: 8
+        height: 9
       alignment: 9
-      pivot: {x: 0.5000006, y: 0.22432223}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: Decorations_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 245
-        width: 10
-        height: 11
+        x: 16
+        y: 246
+        width: 8
+        height: 9
       alignment: 9
-      pivot: {x: 0.46967584, y: 0.25188932}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: Decorations_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 243
-        width: 9
-        height: 11
+        x: 25
+        y: 244
+        width: 7
+        height: 9
       alignment: 9
-      pivot: {x: 0.5, y: 0.30702487}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: Decorations_3
       rect:
         serializedVersion: 2
-        x: 37
-        y: 243
-        width: 10
-        height: 10
+        x: 38
+        y: 244
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.50000036, y: 0.34837645}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: Decorations_4
       rect:
         serializedVersion: 2
-        x: 46
-        y: 241
-        width: 14
-        height: 13
+        x: 47
+        y: 242
+        width: 12
+        height: 11
       alignment: 9
-      pivot: {x: 0.5216609, y: 0.24340703}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: Decorations_5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 239
-        width: 12
-        height: 13
+        x: 83
+        y: 240
+        width: 10
+        height: 11
       alignment: 9
-      pivot: {x: 0.5252711, y: 0.2900602}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,12 +410,12 @@ TextureImporter:
       name: Decorations_6
       rect:
         serializedVersion: 2
-        x: 97
-        y: 239
-        width: 12
-        height: 12
+        x: 98
+        y: 240
+        width: 10
+        height: 10
       alignment: 9
-      pivot: {x: 0.50000066, y: 0.27256522}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,12 +432,12 @@ TextureImporter:
       name: Decorations_7
       rect:
         serializedVersion: 2
-        x: 114
-        y: 239
-        width: 13
-        height: 10
+        x: 115
+        y: 240
+        width: 11
+        height: 8
       alignment: 9
-      pivot: {x: 0.4766746, y: 0.31805268}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,12 +454,12 @@ TextureImporter:
       name: Decorations_8
       rect:
         serializedVersion: 2
-        x: 4
-        y: 226
-        width: 26
-        height: 13
+        x: 5
+        y: 227
+        width: 24
+        height: 11
       alignment: 9
-      pivot: {x: 0.50000006, y: 0.38336653}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,12 +476,12 @@ TextureImporter:
       name: Decorations_9
       rect:
         serializedVersion: 2
-        x: 114
-        y: 223
-        width: 13
-        height: 10
+        x: 115
+        y: 224
+        width: 11
+        height: 8
       alignment: 9
-      pivot: {x: 0.5000012, y: 0.31805268}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,12 +498,12 @@ TextureImporter:
       name: Decorations_10
       rect:
         serializedVersion: 2
-        x: 207
-        y: 179
-        width: 50
-        height: 57
+        x: 208
+        y: 180
+        width: 48
+        height: 55
       alignment: 9
-      pivot: {x: 0.5060651, y: 0.17547366}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,11 +521,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 191
-        width: 65
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 192
+        width: 64
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -542,12 +542,12 @@ TextureImporter:
       name: Decorations_12
       rect:
         serializedVersion: 2
-        x: 87
-        y: 206
-        width: 10
-        height: 10
+        x: 88
+        y: 207
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5000008, y: 0.16642913}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -564,12 +564,12 @@ TextureImporter:
       name: Decorations_13
       rect:
         serializedVersion: 2
-        x: 89
-        y: 198
-        width: 10
-        height: 10
+        x: 97
+        y: 206
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5303238, y: 0.22707824}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -586,12 +586,12 @@ TextureImporter:
       name: Decorations_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 205
-        width: 10
-        height: 10
+        x: 120
+        y: 208
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5303253, y: 0.25740355}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -608,12 +608,12 @@ TextureImporter:
       name: Decorations_15
       rect:
         serializedVersion: 2
-        x: 119
-        y: 207
-        width: 10
-        height: 10
+        x: 129
+        y: 206
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5, y: 0.25740355}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -630,12 +630,12 @@ TextureImporter:
       name: Decorations_16
       rect:
         serializedVersion: 2
-        x: 121
-        y: 198
-        width: 10
-        height: 10
+        x: 161
+        y: 180
+        width: 30
+        height: 35
       alignment: 9
-      pivot: {x: 0.5000008, y: 0.28772736}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -652,12 +652,12 @@ TextureImporter:
       name: Decorations_17
       rect:
         serializedVersion: 2
-        x: 128
-        y: 205
-        width: 10
-        height: 10
+        x: 276
+        y: 176
+        width: 40
+        height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.28772736}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,12 +674,12 @@ TextureImporter:
       name: Decorations_18
       rect:
         serializedVersion: 2
-        x: 160
-        y: 179
-        width: 32
-        height: 37
+        x: 90
+        y: 199
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5000005, y: 0.17216697}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -696,12 +696,12 @@ TextureImporter:
       name: Decorations_19
       rect:
         serializedVersion: 2
-        x: 275
-        y: 175
-        width: 42
-        height: 50
+        x: 122
+        y: 199
+        width: 8
+        height: 8
       alignment: 9
-      pivot: {x: 0.5, y: 0.1118454}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -718,12 +718,12 @@ TextureImporter:
       name: Decorations_20
       rect:
         serializedVersion: 2
-        x: 3
-        y: 166
-        width: 22
-        height: 19
+        x: 4
+        y: 167
+        width: 20
+        height: 17
       alignment: 9
-      pivot: {x: 0.47154972, y: 0.1815571}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -740,12 +740,12 @@ TextureImporter:
       name: Decorations_21
       rect:
         serializedVersion: 2
-        x: 32
-        y: 159
-        width: 32
-        height: 31
+        x: 33
+        y: 160
+        width: 30
+        height: 29
       alignment: 9
-      pivot: {x: 0.49999988, y: 0.18368284}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -762,12 +762,12 @@ TextureImporter:
       name: Decorations_22
       rect:
         serializedVersion: 2
-        x: 84
-        y: 177
-        width: 11
-        height: 12
+        x: 85
+        y: 178
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.55513626, y: 0.2978363}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -784,12 +784,12 @@ TextureImporter:
       name: Decorations_23
       rect:
         serializedVersion: 2
-        x: 100
-        y: 177
-        width: 11
-        height: 12
+        x: 101
+        y: 178
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.4724329, y: 0.2978363}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -806,12 +806,12 @@ TextureImporter:
       name: Decorations_24
       rect:
         serializedVersion: 2
-        x: 116
-        y: 177
-        width: 11
-        height: 12
+        x: 117
+        y: 178
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.5275678, y: 0.22202556}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -828,12 +828,12 @@ TextureImporter:
       name: Decorations_25
       rect:
         serializedVersion: 2
-        x: 131
-        y: 176
-        width: 11
-        height: 12
+        x: 132
+        y: 177
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.47243154, y: 0.2978363}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -850,12 +850,12 @@ TextureImporter:
       name: Decorations_26
       rect:
         serializedVersion: 2
-        x: 191
-        y: 175
-        width: 18
-        height: 24
+        x: 192
+        y: 176
+        width: 16
+        height: 22
       alignment: 9
-      pivot: {x: 0.5, y: 0.083037056}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -872,12 +872,12 @@ TextureImporter:
       name: Decorations_27
       rect:
         serializedVersion: 2
-        x: 82
-        y: 162
-        width: 12
-        height: 12
+        x: 83
+        y: 163
+        width: 10
+        height: 10
       alignment: 9
-      pivot: {x: 0.5252711, y: 0.14621353}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -894,12 +894,12 @@ TextureImporter:
       name: Decorations_28
       rect:
         serializedVersion: 2
-        x: 95
-        y: 160
-        width: 17
-        height: 15
+        x: 96
+        y: 161
+        width: 15
+        height: 13
       alignment: 9
-      pivot: {x: 0.5000005, y: 0.27761942}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -916,12 +916,12 @@ TextureImporter:
       name: Decorations_29
       rect:
         serializedVersion: 2
-        x: 207
-        y: 115
-        width: 50
-        height: 57
+        x: 208
+        y: 116
+        width: 48
+        height: 55
       alignment: 9
-      pivot: {x: 0.5060651, y: 0.17015384}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -938,12 +938,12 @@ TextureImporter:
       name: Decorations_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 143
-        width: 16
-        height: 16
+        x: 1
+        y: 144
+        width: 14
+        height: 14
       alignment: 9
-      pivot: {x: 0.49999988, y: 0.16096878}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -960,12 +960,12 @@ TextureImporter:
       name: Decorations_31
       rect:
         serializedVersion: 2
-        x: 97
-        y: 144
-        width: 15
-        height: 13
+        x: 98
+        y: 145
+        width: 13
+        height: 11
       alignment: 9
-      pivot: {x: 0.5202169, y: 0.24340703}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -982,12 +982,12 @@ TextureImporter:
       name: Decorations_32
       rect:
         serializedVersion: 2
-        x: 116
-        y: 143
-        width: 15
-        height: 13
+        x: 117
+        y: 144
+        width: 13
+        height: 11
       alignment: 9
-      pivot: {x: 0.50000054, y: 0.26673418}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1004,12 +1004,12 @@ TextureImporter:
       name: Decorations_33
       rect:
         serializedVersion: 2
-        x: 117
-        y: 131
-        width: 26
-        height: 19
+        x: 118
+        y: 132
+        width: 24
+        height: 17
       alignment: 9
-      pivot: {x: 0.5, y: 0.22867464}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1026,12 +1026,12 @@ TextureImporter:
       name: Decorations_34
       rect:
         serializedVersion: 2
-        x: 160
-        y: 115
-        width: 32
-        height: 37
+        x: 161
+        y: 116
+        width: 30
+        height: 35
       alignment: 9
-      pivot: {x: 0.5189533, y: 0.1803626}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1048,12 +1048,12 @@ TextureImporter:
       name: Decorations_35
       rect:
         serializedVersion: 2
-        x: 275
-        y: 111
-        width: 42
-        height: 50
+        x: 276
+        y: 112
+        width: 40
+        height: 48
       alignment: 9
-      pivot: {x: 0.5072203, y: 0.11184555}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1070,12 +1070,12 @@ TextureImporter:
       name: Decorations_36
       rect:
         serializedVersion: 2
-        x: 95
-        y: 112
-        width: 22
-        height: 18
+        x: 96
+        y: 113
+        width: 16
+        height: 15
       alignment: 9
-      pivot: {x: 0.44486445, y: 0.23044841}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1092,12 +1092,12 @@ TextureImporter:
       name: Decorations_37
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 49
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 97
+        y: 97
+        width: 47
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1111,37 +1111,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decorations_38
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 107
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42f66c04727b46200800000000000000
-      internalID: 172464064965275428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Decorations_39
       rect:
         serializedVersion: 2
-        x: 191
-        y: 111
-        width: 18
-        height: 24
+        x: 192
+        y: 112
+        width: 16
+        height: 22
       alignment: 9
-      pivot: {x: 0.5, y: 0.13357799}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1158,12 +1136,12 @@ TextureImporter:
       name: Decorations_40
       rect:
         serializedVersion: 2
-        x: 19
-        y: 65
-        width: 8
-        height: 10
+        x: 20
+        y: 66
+        width: 6
+        height: 8
       alignment: 9
-      pivot: {x: 0.50000095, y: 0.37870178}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1180,12 +1158,12 @@ TextureImporter:
       name: Decorations_41
       rect:
         serializedVersion: 2
-        x: 33
-        y: 64
-        width: 15
-        height: 16
+        x: 34
+        y: 65
+        width: 13
+        height: 14
       alignment: 9
-      pivot: {x: 0.50000054, y: 0.27256536}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1202,12 +1180,12 @@ TextureImporter:
       name: Decorations_42
       rect:
         serializedVersion: 2
-        x: 49
-        y: 64
-        width: 15
-        height: 16
+        x: 50
+        y: 65
+        width: 13
+        height: 14
       alignment: 9
-      pivot: {x: 0.5000008, y: 0.2915182}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1224,12 +1202,12 @@ TextureImporter:
       name: Decorations_43
       rect:
         serializedVersion: 2
-        x: 65
-        y: 65
-        width: 15
-        height: 15
+        x: 66
+        y: 66
+        width: 13
+        height: 13
       alignment: 9
-      pivot: {x: 0.5, y: 0.15632172}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1246,12 +1224,12 @@ TextureImporter:
       name: Decorations_44
       rect:
         serializedVersion: 2
-        x: 81
-        y: 64
-        width: 15
-        height: 21
+        x: 82
+        y: 65
+        width: 13
+        height: 19
       alignment: 9
-      pivot: {x: 0.5, y: 0.110112146}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1268,12 +1246,12 @@ TextureImporter:
       name: Decorations_45
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 29
+        x: 97
+        y: 65
+        width: 30
+        height: 27
       alignment: 9
-      pivot: {x: 0.5189531, y: 0.123557255}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1290,12 +1268,12 @@ TextureImporter:
       name: Decorations_46
       rect:
         serializedVersion: 2
-        x: 149
-        y: 67
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 150
+        y: 68
+        width: 4
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1312,12 +1290,12 @@ TextureImporter:
       name: Decorations_47
       rect:
         serializedVersion: 2
-        x: 163
-        y: 65
-        width: 8
-        height: 10
+        x: 164
+        y: 66
+        width: 6
+        height: 8
       alignment: 9
-      pivot: {x: 0.53790665, y: 0.40902632}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1334,12 +1312,12 @@ TextureImporter:
       name: Decorations_48
       rect:
         serializedVersion: 2
-        x: 178
-        y: 63
-        width: 13
-        height: 16
+        x: 179
+        y: 64
+        width: 11
+        height: 14
       alignment: 9
-      pivot: {x: 0.5000012, y: 0.23466063}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1356,12 +1334,12 @@ TextureImporter:
       name: Decorations_49
       rect:
         serializedVersion: 2
-        x: 192
-        y: 63
-        width: 16
-        height: 18
+        x: 193
+        y: 64
+        width: 14
+        height: 16
       alignment: 9
-      pivot: {x: 0.5189533, y: 0.26414192}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1378,12 +1356,12 @@ TextureImporter:
       name: Decorations_50
       rect:
         serializedVersion: 2
-        x: 208
-        y: 66
-        width: 32
-        height: 30
+        x: 209
+        y: 67
+        width: 30
+        height: 28
       alignment: 9
-      pivot: {x: 0.4905243, y: 0.12599716}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1400,12 +1378,12 @@ TextureImporter:
       name: Decorations_51
       rect:
         serializedVersion: 2
-        x: 18
-        y: 51
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 19
+        y: 52
+        width: 4
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1422,12 +1400,12 @@ TextureImporter:
       name: Decorations_52
       rect:
         serializedVersion: 2
-        x: 35
-        y: 49
-        width: 8
-        height: 10
+        x: 36
+        y: 50
+        width: 6
+        height: 8
       alignment: 9
-      pivot: {x: 0.50000143, y: 0.3787014}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1444,12 +1422,12 @@ TextureImporter:
       name: Decorations_53
       rect:
         serializedVersion: 2
-        x: 49
-        y: 48
-        width: 15
-        height: 16
+        x: 50
+        y: 49
+        width: 13
+        height: 14
       alignment: 9
-      pivot: {x: 0.5000008, y: 0.23466039}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1466,12 +1444,12 @@ TextureImporter:
       name: Decorations_54
       rect:
         serializedVersion: 2
-        x: 65
-        y: 48
-        width: 15
-        height: 16
+        x: 66
+        y: 49
+        width: 13
+        height: 14
       alignment: 9
-      pivot: {x: 0.54043275, y: 0.27256608}
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1496,7 +1474,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.15000000596046449},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Decorations_0: 4234090705077185718
       Decorations_1: 5936755781256884489

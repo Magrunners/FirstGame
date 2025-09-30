@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b557c5c8818eb444aae86af2cd4b3c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hero: {fileID: 3709157404910315186}
-  sword: {fileID: 8056833846855284957}
+  _sword: {fileID: 8056833846855284957}
+  _hero: {fileID: 3709157404910315186}
 --- !u!1 &2979991037916953129
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36eb1ca1fcb9af04b8c0dc57cc8d5a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 8056833846855284957}
+  _sword: {fileID: 8056833846855284957}
 --- !u!1 &4086096198515427127
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _knockBackForce: 3
-  _knockBackovingTimerMax: 0.3
+  _knockBackovingTimerMax: 0.27
 --- !u!1 &6165409877480404066
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 61251175312239491}
   - component: {fileID: 879949313936829566}
   - component: {fileID: 7621434424092568370}
+  - component: {fileID: 3581366888573116285}
   m_Layer: 0
   m_Name: HeroVisual
   m_TagString: Untagged
@@ -472,6 +473,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hero: {fileID: 3709157404910315186}
+--- !u!114 &3581366888573116285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165409877480404066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565f873ee22b04c479f13acd6335258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blinkDuration: 0.2
+  _damagableObject: {fileID: 3709157404910315186}
+  _blinkMaterial: {fileID: 2100000, guid: 612b37a643a136546b32aae12ad1d66a, type: 2}
 --- !u!1001 &6229566157721721524
 PrefabInstance:
   m_ObjectHideFlags: 0

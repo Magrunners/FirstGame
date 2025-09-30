@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class FlashBlink : MonoBehaviour
 {
     [SerializeField] private float _blinkDuration = 0.2f;
@@ -10,29 +9,23 @@ public class FlashBlink : MonoBehaviour
     private float _blinkTimer;
     private SpriteRenderer _spriteRenderer;
     private bool _isBlinking;
-
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _defaultMaterial = _spriteRenderer.material;
-
-        _isBlinking = true;
-
-        if(_damagableObject is Hero)
-        {
-            (_damagableObject as Hero).OnFlashBlink += DamagebleObject_OnFlashBlink;
-        }
+        _isBlinking = true;                
     }
-
     private void DamagebleObject_OnFlashBlink(object sender, System.EventArgs e)
     {
         SetBlinkingMaterial();
         _isBlinking = true;
     }
-
     private void Start()
     {
-        
+        if (_damagableObject is Hero)
+        {
+            (_damagableObject as Hero).OnFlashBlink += DamagebleObject_OnFlashBlink;
+        }
     }
     private void Update()
     {
@@ -45,7 +38,6 @@ public class FlashBlink : MonoBehaviour
             }
         }
     }
-
     private void SetBlinkingMaterial()
     {
         _blinkTimer = _blinkDuration;
@@ -55,11 +47,16 @@ public class FlashBlink : MonoBehaviour
     {
         _spriteRenderer.material = _defaultMaterial;
     }
-
     public void StopBlinking()
     {
         SetDefaultMaterial();
         _isBlinking = false;
     }
-
+    private void OnDestroy()
+    {
+        if (_damagableObject is Hero)
+        {
+            (_damagableObject as Hero).OnFlashBlink -= DamagebleObject_OnFlashBlink;
+        }
+    }
 }

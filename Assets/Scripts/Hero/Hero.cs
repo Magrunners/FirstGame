@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider2D))]
 public class Hero : MonoBehaviour
 {
-   
+
     [SerializeField] private float _movingSpeed = 5f;
     [SerializeField] private int _maxHealth = 30;
     [SerializeField] private float _damageRecoveryTime = 0.5f;
@@ -44,7 +44,7 @@ public class Hero : MonoBehaviour
         if (_knockBack.IsGettingKnockBack)
             return;
         HandleMovement();
-        
+
     }
     public bool IsAlive()
     {
@@ -72,7 +72,7 @@ public class Hero : MonoBehaviour
 
     private void DetectDeath()
     {
-        if(_currentHealth ==  0 && _isAlive)
+        if (_currentHealth == 0 && _isAlive)
         {
             _isAlive = false;
             _capsuleCollider.enabled = false;
@@ -100,12 +100,17 @@ public class Hero : MonoBehaviour
     }
     private void HandleMovement()
     {
-        
-        _rb.MovePosition(_rb.position + inputVector* (_movingSpeed* Time.fixedDeltaTime));
-        if(Mathf.Abs(inputVector.x) > _heroMinMovingSpeed || Mathf.Abs(inputVector.y) > _heroMinMovingSpeed)
+
+        _rb.MovePosition(_rb.position + inputVector * (_movingSpeed * Time.fixedDeltaTime));
+        if (Mathf.Abs(inputVector.x) > _heroMinMovingSpeed || Mathf.Abs(inputVector.y) > _heroMinMovingSpeed)
             _isRunning = true;
         else
             _isRunning = false;
+    }
+
+    private void OnDestroy()
+    {
+        GameInput.Instance.OnHeroAttack -= Hero_OnHeroAttack;
     }
 
 }

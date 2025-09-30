@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-
 [RequireComponent(typeof(Animator))]
-
 public class SceletonVisual : MonoBehaviour
 {
     [SerializeField] private EnemyAI _enemyAI;
@@ -15,40 +13,26 @@ public class SceletonVisual : MonoBehaviour
     private const string TAKEDAMAGE = "TakeDamage";
     private const string ISDIE = "IsDie";
     SpriteRenderer _spriteRenderer;
-
-
-
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
     private void Start()
     {
         _enemyAI.OnEnemyAttack += _enemyAI_OnEnemyAttack;
         _enemyEntity.OnTakeDamage += _enemyEntity_OnTakeDamage;
-        _enemyEntity.OnDeath += _enemyEntity_OnDeath;
-       
+        _enemyEntity.OnDeath += _enemyEntity_OnDeath;       
     }
-
-
-    private void OnDestroy()
-    {
-        _enemyAI.OnEnemyAttack -= _enemyAI_OnEnemyAttack;   
-    }
-
     private void Update()
     {
         _animator.SetBool(IS_ROAMING, _enemyAI.IsRoaming);
         _animator.SetFloat(CHASING_SPEED_MULTYPLIER, _enemyAI.GetRoamingAnimationSpeed());
     }
-
     public void TriggerAttackAnimationTurnOn()
     {
         _enemyEntity.PolygonColliderTurnOn();
     }
-
     public void TriggerAttackAnimationTurnOff()
     {
         _enemyEntity.PolygonColliderTurnOff();
@@ -66,5 +50,11 @@ public class SceletonVisual : MonoBehaviour
         _animator.SetBool(ISDIE, true);
         _spriteRenderer.sortingOrder = -1;
         _enemyShadow.SetActive(false);
+    }
+    private void OnDestroy()
+    {
+        _enemyAI.OnEnemyAttack -= _enemyAI_OnEnemyAttack;
+        _enemyEntity.OnTakeDamage -= _enemyEntity_OnTakeDamage;
+        _enemyEntity.OnDeath -= _enemyEntity_OnDeath;
     }
 }

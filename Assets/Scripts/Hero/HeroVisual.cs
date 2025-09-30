@@ -48,5 +48,8 @@ public class HeroVisual : MonoBehaviour
             _spriteRenderer.flipX = false;
     }
 
-    
+    private void OnDestroy()
+    {
+        Hero.OnHeroDeath -= Hero_OnHeroDeath;
+    }
 }

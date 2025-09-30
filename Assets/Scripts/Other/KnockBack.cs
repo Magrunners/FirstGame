@@ -1,5 +1,4 @@
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class KnockBack : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class KnockBack : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-
     private void Update()
     {
         _knockBackMovingTimer -= Time.deltaTime;
@@ -32,8 +30,5 @@ public class KnockBack : MonoBehaviour
     {
         IsGettingKnockBack = false;
         _rb.linearVelocity = Vector2.zero;
-
     }
-
-
 }
