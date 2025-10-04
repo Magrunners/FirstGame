@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using EnemyUtils;
-using UnityEngine.Rendering;
-using Unity.VisualScripting;
 using System;
 
 public class EnemyAI : MonoBehaviour
