@@ -224,7 +224,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1688575016}
     m_Modifications:
     - target: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,15 +244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -506,6 +506,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2701895040245096454, guid: d942517335db4aa4faf7408ddf02df14, type: 3}
   m_PrefabInstance: {fileID: 1556217047}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &812005687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 669023930919012826, guid: 3fcff1c1b176f274ea53f6c8fb6f53bf, type: 3}
+  m_PrefabInstance: {fileID: 409567279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909847222
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +717,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1979776732}
+  - {fileID: 812005687}
   - {fileID: 1087798158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -771,22 +777,6 @@ PrefabInstance:
     - target: {fileID: 8091754384326828621, guid: a93881fc10570f04084c4f8c5b9e47d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779489975176350019, guid: a93881fc10570f04084c4f8c5b9e47d5, type: 3}
-      propertyPath: isHeapEnemy
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779489975176350019, guid: a93881fc10570f04084c4f8c5b9e47d5, type: 3}
-      propertyPath: startingState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779489975176350019, guid: a93881fc10570f04084c4f8c5b9e47d5, type: 3}
-      propertyPath: isChasingEnemy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779489975176350019, guid: a93881fc10570f04084c4f8c5b9e47d5, type: 3}
-      propertyPath: isAttackingEnemy
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1604,4 +1594,3 @@ SceneRoots:
   - {fileID: 265369522}
   - {fileID: 1688575016}
   - {fileID: 299310715}
-  - {fileID: 409567279}
