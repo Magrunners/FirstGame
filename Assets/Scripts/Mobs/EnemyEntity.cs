@@ -24,7 +24,15 @@ public class EnemyEntity : MonoBehaviour
     private void Start()
     {
         _currentHealth = _enemySO.enemyHealth;
+
+        if(_enemyAI.IsHeapEnemy() == true)
+            _boxCollider2D.enabled = false;
     }
+    public void EnableBoxCollider()
+    {
+        _boxCollider2D.enabled = true;
+    }
+
     // Получение урона врагом
     public void TakeDamage(int damage)
     {

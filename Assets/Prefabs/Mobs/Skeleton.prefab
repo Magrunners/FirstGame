@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16fd32993a68ce4f8e07897c5ca21fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingState: 0
+  _startingState: 1
   _roamingDistanceMax: 7
   _roamingDistanceMin: 3
   _roamingTimerMax: 2
@@ -428,6 +428,8 @@ MonoBehaviour:
   _isAttackingEnemy: 1
   _attackingDistance: 2
   _attackRate: 2
+  _isHeapEnemy: 0
+  _risingDistance: 5
 --- !u!114 &7270983491229711939
 MonoBehaviour:
   m_ObjectHideFlags: 0

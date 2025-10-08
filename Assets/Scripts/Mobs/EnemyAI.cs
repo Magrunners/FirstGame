@@ -4,7 +4,7 @@ using EnemyUtils;
 using System;
 
 public class EnemyAI : MonoBehaviour
-{   
+{
     [SerializeField] private State _startingState;
     [SerializeField] private float _roamingDistanceMax = 7f;
     [SerializeField] private float _roamingDistanceMin = 3f;
@@ -13,11 +13,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool _isChasingEnemy = false;
     [SerializeField] private float _chasingDistance = 4f;
     [SerializeField] private float _chasingSpeedMultyplier = 2f;
-    
+
     [SerializeField] private bool _isAttackingEnemy = false;
     [SerializeField] private float _attackingDistance = 2.5f;
     [SerializeField] private float _attackRate = 1f;
 
+    [SerializeField] private bool _isHeapEnemy = false;
+    [SerializeField] private float _risingDistance = 5f;
     private NavMeshAgent _navMeshAgent;
     private Hero _hero;
     private State _currentState;
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     private Vector3 _lastPosition;
 
     public event EventHandler OnEnemyAttack;
+    public event EventHandler OnStartingRising;
 
     public bool IsRoaming => _navMeshAgent.velocity != Vector3.zero;
     private enum State
@@ -43,6 +46,7 @@ public class EnemyAI : MonoBehaviour
         Roaming,
         Chasing,
         Attacking,
+        Heap,
         Death
     }
     private void Awake()
@@ -50,7 +54,15 @@ public class EnemyAI : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.updateRotation = false;
         _navMeshAgent.updateUpAxis = false;
-        _currentState = _startingState;
+        if (_isHeapEnemy == true)
+        {
+            _navMeshAgent.enabled = false;
+            _currentState = State.Heap;
+        }
+        else
+        {
+            _currentState = State.Idle;
+        }
         _roamingSpeed = _navMeshAgent.speed;
         _chasingSpeed = _navMeshAgent.speed * _chasingSpeedMultyplier;
         _hero = FindAnyObjectByType<Hero>();
@@ -60,12 +72,42 @@ public class EnemyAI : MonoBehaviour
         StateHandler();
         MovementDirectionHandler();
     }
+    public bool IsHeapEnemy()
+    {
+        return _isHeapEnemy;
+    }
     // Установка состояния смерти, остановка движения персонажа
     public void SetDeathState()
     {
         _navMeshAgent.ResetPath();
         _currentState = State.Death;
     }
+    // Проверка условий для подъёма из состояния "Heap"
+    private void CheckForRising()
+    {
+        float _distanceToPlayer = Vector3.Distance(transform.position, _hero.transform.position);
+        if (_distanceToPlayer <= _risingDistance && _hero.IsAlive())
+        {
+            StartRising();
+        }
+    }
+    // Логика подъёма из состояния "Heap"
+    private void StartRising()
+    {
+        _currentState = State.Idle;
+
+        OnStartingRising?.Invoke(this, EventArgs.Empty);
+    }
+    public void EndRising()
+    {
+        _navMeshAgent.enabled = true;
+        _currentState = _startingState;
+    }
+
+
+
+
+
     // Обработка текущего состояния персонажа и выполнение соответствующих действий
     private void StateHandler()
     {
@@ -88,6 +130,9 @@ public class EnemyAI : MonoBehaviour
                 AttakingTarget();
                 CheckCurrentState();
                 break;
+            case State.Heap:
+                CheckForRising();
+                break;
             case State.Death:
                 break;
             default:
@@ -102,9 +147,15 @@ public class EnemyAI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, _hero.transform.position);
         State newState = State.Roaming;
 
+        if(_currentState == State.Heap)
+        {
+            newState = State.Heap;
+            return;
+        }
+
         if (_isChasingEnemy)
         {
-            if(distanceToPlayer <= _chasingDistance)
+            if (distanceToPlayer <= _chasingDistance)
                 newState = State.Chasing;
         }
         if (_isAttackingEnemy)
@@ -117,20 +168,22 @@ public class EnemyAI : MonoBehaviour
                     newState = State.Roaming;
             }
         }
-        if(newState != _currentState)
+        if (newState != _currentState)
         {
             if (newState == State.Chasing)
             {
+                if (!IsNavMeshAgentReady())
+                    return;
                 _navMeshAgent.ResetPath();
                 _navMeshAgent.speed = _chasingSpeed;
             }
             _currentState = newState;
         }
-        else if(newState == State.Roaming)
+        else if (newState == State.Roaming)
         {
             _navMeshAgent.speed = _roamingSpeed;
         }
-        else if( newState == State.Attacking)
+        else if (newState == State.Attacking)
         {
             _navMeshAgent.ResetPath();
         }
@@ -139,6 +192,9 @@ public class EnemyAI : MonoBehaviour
     // Перемещение к случайной точке в пределах заданного радиуса от начальной позиции с определённым интервалом времени
     private void Roaming()
     {
+        if (!IsNavMeshAgentReady())
+            return;
+
         _startingPosition = transform.position;
         _roamPosition = GetRoamingPosition();
         _navMeshAgent.SetDestination(_roamPosition);
@@ -150,6 +206,8 @@ public class EnemyAI : MonoBehaviour
     }
     private void ChasingTarget()
     {
+        if (!IsNavMeshAgentReady())
+            return;
         _navMeshAgent.SetDestination(_hero.transform.position);
     }
     // Атака цели с определённым интервалом
@@ -193,5 +251,19 @@ public class EnemyAI : MonoBehaviour
     public float GetRoamingAnimationSpeed()
     {
         return _navMeshAgent.speed / _roamingSpeed;
+    }
+    private bool IsNavMeshAgentReady()
+    {
+        if (_navMeshAgent == null)
+        {
+            return false;
+        }
+
+        if (!_navMeshAgent.isActiveAndEnabled)
+        {    
+            return false;
+        }
+
+        return true;
     }
 }

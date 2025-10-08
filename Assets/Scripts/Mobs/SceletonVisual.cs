@@ -12,6 +12,10 @@ public class SceletonVisual : MonoBehaviour
     private const string ATTACK = "Attack";
     private const string TAKEDAMAGE = "TakeDamage";
     private const string ISDIE = "IsDie";
+    private const string IS_HEAP = "IsHeap";
+    private const string RISING = "Rising";
+    private const string END_RISING = "EndRising";
+
     SpriteRenderer _spriteRenderer;
     private void Awake()
     {
@@ -22,12 +26,35 @@ public class SceletonVisual : MonoBehaviour
     {
         _enemyAI.OnEnemyAttack += _enemyAI_OnEnemyAttack;
         _enemyEntity.OnTakeDamage += _enemyEntity_OnTakeDamage;
-        _enemyEntity.OnDeath += _enemyEntity_OnDeath;       
+        _enemyEntity.OnDeath += _enemyEntity_OnDeath;
+        _enemyAI.OnStartingRising += _enemyAI_OnStartingRising;
+
+        if (_enemyAI.IsHeapEnemy() == true)
+        {
+            _animator.SetBool(IS_HEAP, true);
+        }
     }
     private void Update()
     {
-        _animator.SetBool(IS_ROAMING, _enemyAI.IsRoaming);
-        _animator.SetFloat(CHASING_SPEED_MULTYPLIER, _enemyAI.GetRoamingAnimationSpeed());
+        if (!_animator.GetBool(IS_HEAP))
+        {
+            _animator.SetBool(IS_ROAMING, _enemyAI.IsRoaming);
+            _animator.SetFloat(CHASING_SPEED_MULTYPLIER, _enemyAI.GetRoamingAnimationSpeed());
+        }
+        
+    }
+
+    private void _enemyAI_OnStartingRising(object sender, System.EventArgs e)
+    {
+        _animator.SetBool(IS_HEAP, false);
+        _animator.SetTrigger(RISING);
+    }
+    public void OnRisingAnimationComplete()
+    {
+        _animator.SetTrigger(END_RISING);
+        _enemyAI.EndRising();
+        _enemyEntity.EnableBoxCollider();
+        _enemyShadow.SetActive(true);
     }
     // Включает коллайдер атаки в начале анимации атаки
     public void TriggerAttackAnimationTurnOn()
@@ -61,6 +88,7 @@ public class SceletonVisual : MonoBehaviour
     {
         _enemyAI.OnEnemyAttack -= _enemyAI_OnEnemyAttack;
         _enemyEntity.OnTakeDamage -= _enemyEntity_OnTakeDamage;
+        _enemyAI.OnStartingRising -= _enemyAI_OnStartingRising;
         _enemyEntity.OnDeath -= _enemyEntity_OnDeath;
     }
 }
