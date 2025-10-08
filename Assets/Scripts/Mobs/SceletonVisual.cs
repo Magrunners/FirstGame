@@ -29,28 +29,34 @@ public class SceletonVisual : MonoBehaviour
         _animator.SetBool(IS_ROAMING, _enemyAI.IsRoaming);
         _animator.SetFloat(CHASING_SPEED_MULTYPLIER, _enemyAI.GetRoamingAnimationSpeed());
     }
+    // Включает коллайдер атаки в начале анимации атаки
     public void TriggerAttackAnimationTurnOn()
     {
         _enemyEntity.PolygonColliderTurnOn();
     }
+    // Выключает коллайдер атаки в конце анимации атаки
     public void TriggerAttackAnimationTurnOff()
     {
         _enemyEntity.PolygonColliderTurnOff();
     }
+    // Анимация атаки врагом
     private void _enemyAI_OnEnemyAttack(object sender, System.EventArgs e)
     {
         _animator.SetTrigger(ATTACK);
     }
+    // Анимация получения урона врагом
     private void _enemyEntity_OnTakeDamage(object sender, System.EventArgs e)
     {
         _animator.SetTrigger(TAKEDAMAGE);
     }
+    // Анимация смерти врага
     private void _enemyEntity_OnDeath(object sender, System.EventArgs e)
     {
         _animator.SetBool(ISDIE, true);
         _spriteRenderer.sortingOrder = -1;
         _enemyShadow.SetActive(false);
     }
+    // Отписка от событий при уничтожении объекта
     private void OnDestroy()
     {
         _enemyAI.OnEnemyAttack -= _enemyAI_OnEnemyAttack;

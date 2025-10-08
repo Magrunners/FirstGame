@@ -4,7 +4,7 @@ using EnemyUtils;
 using System;
 
 public class EnemyAI : MonoBehaviour
-{
+{   
     [SerializeField] private State _startingState;
     [SerializeField] private float _roamingDistanceMax = 7f;
     [SerializeField] private float _roamingDistanceMin = 3f;
@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool _isChasingEnemy = false;
     [SerializeField] private float _chasingDistance = 4f;
     [SerializeField] private float _chasingSpeedMultyplier = 2f;
-
+    
     [SerializeField] private bool _isAttackingEnemy = false;
     [SerializeField] private float _attackingDistance = 2.5f;
     [SerializeField] private float _attackRate = 1f;
@@ -60,11 +60,13 @@ public class EnemyAI : MonoBehaviour
         StateHandler();
         MovementDirectionHandler();
     }
+    // Установка состояния смерти, остановка движения персонажа
     public void SetDeathState()
     {
         _navMeshAgent.ResetPath();
         _currentState = State.Death;
     }
+    // Обработка текущего состояния персонажа и выполнение соответствующих действий
     private void StateHandler()
     {
         switch (_currentState)
@@ -94,6 +96,7 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
     }
+    // Проверка и смена текущего состояния в зависимости от расстояния до цели и настроек преследования/атаки
     private void CheckCurrentState()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _hero.transform.position);
@@ -133,12 +136,14 @@ public class EnemyAI : MonoBehaviour
         }
         _currentState = newState;
     }
+    // Перемещение к случайной точке в пределах заданного радиуса от начальной позиции с определённым интервалом времени
     private void Roaming()
     {
         _startingPosition = transform.position;
         _roamPosition = GetRoamingPosition();
         _navMeshAgent.SetDestination(_roamPosition);
     }
+    // Получение случайной точки для перемещения в пределах заданного радиуса от начальной позиции
     private Vector3 GetRoamingPosition()
     {
         return _startingPosition + MobsUtils.GetRandomDir() * UnityEngine.Random.Range(_roamingDistanceMin, _roamingDistanceMax);
@@ -147,6 +152,7 @@ public class EnemyAI : MonoBehaviour
     {
         _navMeshAgent.SetDestination(_hero.transform.position);
     }
+    // Атака цели с определённым интервалом
     private void AttakingTarget()
     {
         if (Time.time > _nextAttackTimer)
@@ -155,6 +161,7 @@ public class EnemyAI : MonoBehaviour
             _nextAttackTimer = Time.time + _attackRate;
         }
     }
+    // Определение направления движения персонажа
     private void MovementDirectionHandler()
     {
         if (Time.time > _nextCheckDirectionTime)
@@ -171,6 +178,7 @@ public class EnemyAI : MonoBehaviour
             _nextCheckDirectionTime = Time.time + _checkDirectionDuration;
         }
     }
+    // Выбор направления персонажа в зависимости от положения цели
     private void ChangeFacingDirection(Vector3 sourcePosition, Vector3 targetPosition)
     {
         if (sourcePosition.x > targetPosition.x)

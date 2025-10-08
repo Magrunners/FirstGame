@@ -25,26 +25,30 @@ public class EnemyEntity : MonoBehaviour
     {
         _currentHealth = _enemySO.enemyHealth;
     }
-    
+    // Получение урона врагом
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
         OnTakeDamage?.Invoke(this, EventArgs.Empty);
         DetectDeath();
     }
+    // Включает полигональный коллайдер, чтобы наносить урон герою в анимации атаки
     public void PolygonColliderTurnOn()
     {
         _polygonCollider2D.enabled = true;
     }
+    // Выключает полигональный коллайдер, чтобы не наносить урон герою вне анимации атаки
     public void PolygonColliderTurnOff()
     {
         _polygonCollider2D.enabled = false;
     }
+    // Наносит урон герою, если он находится в триггере врага
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.transform.TryGetComponent(out Hero hero))
             hero.TakeDamage(transform, _enemySO.enemyDamageAmount);
     }
+    // Определяет смерть врага и вызывает событие OnDeath
     private void DetectDeath()
     {
         if (_currentHealth <= 0)
