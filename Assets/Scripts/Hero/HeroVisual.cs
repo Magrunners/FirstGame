@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class HeroVisual : MonoBehaviour
 {
+    private static readonly int Die = Animator.StringToHash("IsDie");
+    private static readonly int Running = Animator.StringToHash("IsRunning");
+
     public Hero Hero; 
     private FlashBlink _flashBlink;
     private Animator animator;
-    private const string IS_RUNNING = "IsRunning";
-    private const string IS_DIE = "IsDie";
+    private const string IsRunning = "IsRunning";
+    private const string IsDie = "IsDie";
     private SpriteRenderer _spriteRenderer;
     
     private void Awake()
@@ -25,27 +28,21 @@ public class HeroVisual : MonoBehaviour
         if (Hero.IsAlive())
             RotateHero();
 
-        animator.SetBool(IS_RUNNING, Hero.IsRunning());
-       
+        animator.SetBool(Running, Hero.IsRunning());       
     }
-    
+    // Подписка на событие смерти героя
     private void Hero_OnHeroDeath(object sender, System.EventArgs e)
     {
-        animator.SetBool(IS_DIE, true);
+        animator.SetBool(Die, true);
         _flashBlink.StopBlinking();
     }
-
+    // Поворот героя в сторону курсора мыши
     private void RotateHero()
     {
         Vector3 mousePosition = GameInput.Instance.MousePosition();
         Vector3 heroPosition = Hero.HeroPosition();
 
-        if (mousePosition.x < heroPosition.x)
-        {
-            _spriteRenderer.flipX = true;
-        }
-        else
-            _spriteRenderer.flipX = false;
+        _spriteRenderer.flipX = mousePosition.x < heroPosition.x;
     }
 
     private void OnDestroy()

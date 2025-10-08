@@ -1,25 +1,25 @@
 using UnityEngine;
 public class SlashVisual : MonoBehaviour
 {
-    [SerializeField] private Sword _sword;
+    [SerializeField] private Sword sword;
 
-    private Animator animator;
+    private Animator _animator;
     private const string ATTACK = "Attack";
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
     private void Start()
     {
-        _sword.OnSwordSwing += Sword_OnSwordSwing;
+        sword.OnSwordSwing += Sword_OnSwordSwing;
     }
     private void Sword_OnSwordSwing(object sender, System.EventArgs e)
     {
-        animator.SetTrigger(ATTACK);
+        _animator.SetTrigger(ATTACK);
     }
     private void OnDestroy()
     {
-        _sword.OnSwordSwing -= Sword_OnSwordSwing;
+        sword.OnSwordSwing -= Sword_OnSwordSwing;
     }
 }
 

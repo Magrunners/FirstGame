@@ -4,7 +4,7 @@ public class ActiveWeapon : MonoBehaviour
 {
     public static ActiveWeapon Instance {  get; private set; }
     
-    [SerializeField] private Sword _sword;
+    [SerializeField] private Sword sword;
 
     public Hero _hero;
 
@@ -14,7 +14,7 @@ public class ActiveWeapon : MonoBehaviour
     }
     public Sword GetActiveWeapon()
     {
-        return _sword;
+        return sword;
     }
     private void Update()
     {
@@ -26,10 +26,13 @@ public class ActiveWeapon : MonoBehaviour
         Vector3 mousePosition = GameInput.Instance.MousePosition();
         Vector3 heroPosition = _hero.HeroPosition();
 
-        if (mousePosition.x < heroPosition.x)
+        transform.rotation = mousePosition.x >= heroPosition.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        
+
+        /*if (mousePosition.x < heroPosition.x)
             transform.rotation = Quaternion.Euler(0, 180, 0);
         else
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);*/
     }
 
 

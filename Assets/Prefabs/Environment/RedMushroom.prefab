@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Size: {x: 0.46341705, y: 0.29817486, z: 4}
   m_Center: {x: 0.023050308, y: 0.0771656, z: 0}
-  m_Area: 0
+  m_Area: 1
   m_AffectedAgents: ffffffff
 --- !u!1 &9134561761458197210
 GameObject:
@@ -173,4 +173,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

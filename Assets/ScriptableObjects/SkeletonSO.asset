@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SkeletonSO
   m_EditorClassIdentifier: 
   enemyName: Skeleton
-  enemyHealth: 20
+  enemyHealth: 3
   enemyDamageAmount: 1

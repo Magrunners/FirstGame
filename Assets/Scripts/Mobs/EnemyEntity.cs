@@ -60,7 +60,7 @@ public class EnemyEntity : MonoBehaviour
     private void DetectDeath()
     {
         if (_currentHealth <= 0)
-        {
+        {   
             _boxCollider2D.enabled = false;
             _polygonCollider2D.enabled = false;
             _enemyAI.SetDeathState();

@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00157d607f55454a8aacb75b1b74564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyObjects: {fileID: 8998918639766076046}
-  _destroyVFX: {fileID: 2984908117584810319, guid: 77521a4ed3ac08540a6f025990008442, type: 3}
+  destroyObjects: {fileID: 8998918639766076046}
+  destroyVFX: {fileID: 2984908117584810319, guid: 77521a4ed3ac08540a6f025990008442, type: 3}
 --- !u!1 &6084787002318651038
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3866421935939139723, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.085213
+      value: -4.624154
       objectReference: {fileID: 0}
     - target: {fileID: 3866421935939139723, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9054337
+      value: -4.1671944
       objectReference: {fileID: 0}
     - target: {fileID: 3866421935939139723, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49,16 +49,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6592057819686867218, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
-      propertyPath: _isHeapEnemy
+      propertyPath: isHeapEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7270983491229711939, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
+      propertyPath: _enemySO
+      value: 
+      objectReference: {fileID: 11400000, guid: 342423fd7a3542e4da299d565c660155, type: 2}
     - target: {fileID: 8003576783028187562, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1400002288684528572, guid: 287e2d02efdbb6043ad995ffb64db436, type: 3}
     - target: {fileID: 9090419995490188952, guid: 3db67d2a94e7af64ebf5440993f99172, type: 3}
       propertyPath: m_Name
-      value: HeapingSkeleton
+      value: SkeletonHeap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

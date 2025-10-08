@@ -1,12 +1,12 @@
 using UnityEngine;
 public class FlashBlink : MonoBehaviour
 {
-    [SerializeField] private float _blinkDuration = 0.2f;
-    [SerializeField] private MonoBehaviour _damagableObject;
-    [SerializeField] private Material _blinkMaterial;
+    [SerializeField] private MonoBehaviour damagableObject;
+    [SerializeField] private Material blinkMaterial;
+    [SerializeField] private float blinkDuration = 0.2f;
 
-    private Material _defaultMaterial;
     private float _blinkTimer;
+    private Material _defaultMaterial;
     private SpriteRenderer _spriteRenderer;
     private bool _isBlinking;
     private void Awake()
@@ -22,9 +22,9 @@ public class FlashBlink : MonoBehaviour
     }
     private void Start()
     {
-        if (_damagableObject is Hero)
+        if (damagableObject is Hero hero)
         {
-            (_damagableObject as Hero).OnFlashBlink += DamagebleObject_OnFlashBlink;
+            hero.OnFlashBlink += DamagebleObject_OnFlashBlink;
         }
     }
     private void Update()
@@ -40,8 +40,8 @@ public class FlashBlink : MonoBehaviour
     }
     private void SetBlinkingMaterial()
     {
-        _blinkTimer = _blinkDuration;
-        _spriteRenderer.material = _blinkMaterial;
+        _blinkTimer = blinkDuration;
+        _spriteRenderer.material = blinkMaterial;
     }
     private void SetDefaultMaterial()
     {
@@ -54,9 +54,9 @@ public class FlashBlink : MonoBehaviour
     }
     private void OnDestroy()
     {
-        if (_damagableObject is Hero)
+        if (damagableObject is Hero hero)
         {
-            (_damagableObject as Hero).OnFlashBlink -= DamagebleObject_OnFlashBlink;
+            hero.OnFlashBlink -= DamagebleObject_OnFlashBlink;
         }
     }
 }
