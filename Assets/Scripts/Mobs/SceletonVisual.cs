@@ -43,7 +43,6 @@ public class SceletonVisual : MonoBehaviour
         }
         
     }
-
     private void _enemyAI_OnStartingRising(object sender, System.EventArgs e)
     {
         _animator.SetBool(IsHeap, false);

@@ -121,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8091754384326828621}
   - component: {fileID: 6387191387708390395}
-  - component: {fileID: 6724318553186747701}
   - component: {fileID: 4224752644842378986}
   - component: {fileID: 907598519678527467}
   - component: {fileID: 7334835579337712718}
@@ -177,43 +176,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &6724318553186747701
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4539120477555664171}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.043745298, y: -0.10623855}
-  m_Size: {x: 0.912511, y: 0.6375438}
-  m_Direction: 1
 --- !u!195 &4224752644842378986
 NavMeshAgent:
   m_ObjectHideFlags: 0

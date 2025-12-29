@@ -84,8 +84,8 @@ public class EnemyAI : MonoBehaviour
         if (!IsNavMeshAgentReady())
             return;
         _chasingSpeed = 0;
-        _navMeshAgent.ResetPath();
         _navMeshAgent.enabled = false;
+        //_navMeshAgent.ResetPath();
         _currentState = State.Death;
     }
     // Проверка условий для подъёма из состояния "Heap"
