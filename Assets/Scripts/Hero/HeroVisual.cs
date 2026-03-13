@@ -30,13 +30,11 @@ public class HeroVisual : MonoBehaviour
 
         animator.SetBool(Running, Hero.IsRunning());       
     }
-    // Подписка на событие смерти героя
     private void Hero_OnHeroDeath(object sender, System.EventArgs e)
     {
         animator.SetBool(Die, true);
         _flashBlink.StopBlinking();
     }
-    // Поворот героя в сторону курсора мыши
     private void RotateHero()
     {
         Vector3 mousePosition = GameInput.Instance.MousePosition();
