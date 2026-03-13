@@ -72,7 +72,6 @@ public class Hero : MonoBehaviour
         }
         DetectDeath();
     }
-    // Проверка смерти героя
     private void DetectDeath()
     {
         if (_currentHealth == 0 && _isAlive)
@@ -84,24 +83,20 @@ public class Hero : MonoBehaviour
             OnHeroDeath.Invoke(this, EventArgs.Empty);
         }
     }
-    // Восстановление возможности получать урон после времени неуязвимости
     private IEnumerator DemageRecoveryRoutine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         _canTakeDamage = true;
     }
-    // Позиция героя на экране
     public Vector3 HeroPosition()
     {
         Vector3 heroPosition = _mainCamera.WorldToScreenPoint(transform.position);
         return heroPosition;
     }
-    // Атака героя
     private void Hero_OnHeroAttack(object sender, System.EventArgs e)
     {
         ActiveWeapon.Instance.GetActiveWeapon().Attack();
     }
-    // Поворот героя в сторону курсора мыши
     private void HandleMovement()
     {
         _rb.MovePosition(_rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
